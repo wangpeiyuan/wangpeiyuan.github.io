@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wangpeiyuan.cn/2019/07/03/hello-world/</loc>
+    <loc>http://wangpeiyuan.cn/about/index.html</loc>
     
-    <lastmod>2019-07-03T13:26:43.845Z</lastmod>
+    <lastmod>2019-07-03T14:25:57.664Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wangpeiyuan.cn/about/index.html</loc>
+    <loc>http://wangpeiyuan.cn/2019/07/03/hello-world/</loc>
     
-    <lastmod>2019-07-03T13:15:36.800Z</lastmod>
+    <lastmod>2019-07-03T14:23:10.508Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangpeiyuan.cn/categories/index.html</loc>
+    
+    <lastmod>2019-07-03T14:22:33.207Z</lastmod>
     
   </url>
   
