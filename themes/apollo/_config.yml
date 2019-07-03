@@ -1,0 +1,22 @@
+menu:
+    Blog: /
+    Archive: /archives/
+    # Weibo: http://weibo.com/sunchongsheng
+    GitHub: https://github.com/wangpeiyuan
+    # Rss: /atom.xml
+    about: /about
+
+favicon: /myfavicon.png
+logo: /myfavicon.png
+
+# Comment
+# e.g disqus: seansun
+disqus:
+duoshuo:
+
+# Analytics
+# google-analytics:
+# ga: UA-xxxxxxxx-x
+
+# Copyright Infomation
+startyear: 2019
