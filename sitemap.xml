@@ -2,37 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangpeiyuan.cn/2019/11/26/Android-handler-source-code-analysis/</loc>
+    
+    <lastmod>2019-11-26T14:37:45.550Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangpeiyuan.cn/2019/10/10/Android-device-monitor-freezes-on-mac/</loc>
     
-    <lastmod>2019-10-10T07:40:04.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangpeiyuan.cn/2019/07/03/android-vertical-text-emoji-processing/</loc>
-    
-    <lastmod>2019-07-03T15:04:34.679Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangpeiyuan.cn/about/index.html</loc>
-    
-    <lastmod>2019-07-03T14:25:57.664Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangpeiyuan.cn/2019/07/03/hello-world/</loc>
-    
-    <lastmod>2019-07-03T14:23:10.508Z</lastmod>
+    <lastmod>2019-11-26T13:56:20.275Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wangpeiyuan.cn/categories/index.html</loc>
     
-    <lastmod>2019-07-03T14:22:33.207Z</lastmod>
+    <lastmod>2019-11-26T13:52:59.702Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangpeiyuan.cn/about/index.html</loc>
+    
+    <lastmod>2019-11-26T13:52:59.701Z</lastmod>
     
   </url>
   
