@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangpeiyuan.cn/about/index.html</loc>
+    
+    <lastmod>2019-11-27T04:43:57.785Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangpeiyuan.cn/2019/11/26/Android-handler-source-code-analysis/</loc>
     
-    <lastmod>2019-11-26T14:37:45.550Z</lastmod>
+    <lastmod>2019-11-27T04:41:45.559Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>http://wangpeiyuan.cn/categories/index.html</loc>
     
     <lastmod>2019-11-26T13:52:59.702Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangpeiyuan.cn/about/index.html</loc>
-    
-    <lastmod>2019-11-26T13:52:59.701Z</lastmod>
     
   </url>
   
