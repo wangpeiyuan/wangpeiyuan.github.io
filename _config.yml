@@ -4,7 +4,7 @@
 
 # Site
 title: 源来似你
-subtitle: 一个向往自由的程序猿
+subtitle: 一个向往自由的开发工程师
 description:
 keywords:
 author: 王培源
@@ -35,7 +35,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
