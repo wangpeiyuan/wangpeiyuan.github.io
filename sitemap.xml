@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wangpeiyuan.cn/about/index.html</loc>
+    <loc>http://wangpeiyuan.cn/2019/12/21/EventBus-source-code-analysis/</loc>
     
-    <lastmod>2019-11-27T04:43:57.785Z</lastmod>
+    <lastmod>2019-12-21T14:38:28.685Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wangpeiyuan.cn/2019/11/26/Android-handler-source-code-analysis/</loc>
     
-    <lastmod>2019-11-27T04:41:45.559Z</lastmod>
+    <lastmod>2019-12-21T14:37:13.131Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wangpeiyuan.cn/about/index.html</loc>
+    
+    <lastmod>2019-11-27T04:43:57.785Z</lastmod>
     
   </url>
   
