@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangpeiyuan.cn/2020/01/21/ButterKnife-source-code-analysis/</loc>
+    
+    <lastmod>2020-01-21T10:08:41.411Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangpeiyuan.cn/2019/12/21/EventBus-source-code-analysis/</loc>
     
     <lastmod>2019-12-21T14:38:28.685Z</lastmod>
