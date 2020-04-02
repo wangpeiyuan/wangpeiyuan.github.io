@@ -2,7 +2,7 @@
 title: Android device monitor 在 Mac 上无法点击的解决方案
 date: 2019-10-10 15:07:30
 categories: Android
-tags:
+tags: Tip
 ---
 最近在 Mac 上使用 Android device monitor 多次遇到无法点击以及一打开就弹出 An error has occurred 的错误弹窗，主要的原因是升级了相关了 SDK 导致出现问题。在网上搜索解决方案绝大多数的答案是将 Java SDK 的版本降到一个指定版本，非得降级不可吗，如果不降级就没有解决方案吗？经过我各种搜索各种尝试终于在 Stackoverflow 上搜索到一个解决方案 [Android device monitor freezes on Mac OS X](https://stackoverflow.com/questions/47089757/android-device-monitor-freezes-on-mac-os-x/47090518) ，就在此简单做个记录。
 

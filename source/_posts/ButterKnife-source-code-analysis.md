@@ -4,8 +4,6 @@ date: 2020-01-21 18:07:28
 categories: Android
 tags:
 ---
-# Butterknife 源码浅析
-
 ## 一、前言
 
 Butterknife 依赖注入框架，简化手动书写 `findViewById` 等等，这里我们将深入源码来看看 Butterknife 内部的实现原理。
