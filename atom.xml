@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangpeiyuan.cn/"/>
-  <updated>2020-04-02T02:41:13.950Z</updated>
+  <updated>2020-05-11T06:37:52.541Z</updated>
   <id>http://wangpeiyuan.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何自动批量取消抖音喜欢的视频</title>
+    <link href="http://wangpeiyuan.cn/2020/05/11/How-to-automatically-cancel-likes-on-Douyin-app/"/>
+    <id>http://wangpeiyuan.cn/2020/05/11/How-to-automatically-cancel-likes-on-Douyin-app/</id>
+    <published>2020-05-11T03:24:01.000Z</published>
+    <updated>2020-05-11T06:37:52.541Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近有想在抖音上发布视频，不想再注册个新号，但原来的账号之前在抖音上点赞了好多视频，个人主页中喜欢有将近 1 千个，不太喜欢，想当一个新号来使用的话，必须将这些喜欢取消掉。</p><p>手动取消的话，感觉特别麻烦，讨厌重复性的动作。网上搜了一圈，基本没找到自动取消的方案，实在是没撤了，作为一个开发者，最后只能自己动手丰衣足食了。</p><p>初步一想，有两种方案：</p><ol><li>找到抖音的请求接口，批量循环一遍。</li><li>在手机上模拟点击操作。</li></ol><a id="more"></a><p>方案 1 的话如果能找到对应接口的话是最快的，麻烦点在于需要寻找接口以及能找到之后接口请求各种验证，相对于方案 2 于我来说相对麻烦不少（作为一个 Android 开发者），所以我只能放弃方案 1 选择方案 2 了。</p><p>在 Android 上想模拟点击操作，毫无疑问只能使用无障碍服务，比如之前很火的微信自动抢红包，也是使用这种方式，当然 xposed 也是可以，但我实在不懂啊😂。无障碍模拟点击通俗来讲，就是在当前界面中找到需要点击的视图，比如我们现在要做的抖音喜欢按钮，找到视图之后通过模拟点击方法触发点击事件。</p><p>接下来就开始我们的工程，首先是配置项目，找到抖音的包名，使得无障碍服务仅监听抖音的事件，免得手机卡顿。最重要的是继承 <code>AccessibilityService</code> 类来监听页面变化等事件，具体过程看看 Android 开发官网或者网上的教程都挺多的，就不在这里赘述。</p><p>然后，用开发工具 Monitor 查看抖音的布局，找到喜欢相关视图，</p><p><img src="/2020/05/11/How-to-automatically-cancel-likes-on-Douyin-app/douyindislike_1.png" alt="douyindislike_like"></p><p>根据上图，可以找到喜欢的视图和它的 id，这个主要是用来定位是不是在个人主页喜欢的 tab 下面，然后通过 <code>AccessibilityNodeInfo.findAccessibilityNodeInfosByText(&quot;喜欢&quot;)</code> 来找到对应的结点，不用 id 的原因是兼容，不同版本的抖音 id 是不一样的。</p><p>确认在个人主页之后，就要找到视频 item，</p><p><img src="/2020/05/11/How-to-automatically-cancel-likes-on-Douyin-app/douyindislike_2.png" alt="douyindislike_video_item"></p><p>同样通过 <code>AccessibilityNodeInfo.findAccessibilityNodeInfosByText(&quot;视频&quot;)</code> 找到对应结点，然后通过 <code>performAction(AccessibilityNodeInfo.ACTION_CLICK)</code> 模拟点击，就会跳转到视频的详情页面。</p><p><img src="/2020/05/11/How-to-automatically-cancel-likes-on-Douyin-app/douyindislike_3.png" alt="douyindislike_video_detail"></p><p>在上图，可以发现在视频详情页，根本找不到任何结点让我们模拟点击，也就是说通过找到视图结点模拟操作在这个界面根本无法做到！</p><p>怎么办？</p><p>只能回去翻翻官方文档，可以发现一个属性 <code>android:canPerformGestures=&quot;true&quot;</code>，这样子就可以在手机上模拟手势操作了，需要注意的是，这个属性仅支持 Android 7.0 及其以上的版本。</p><p>设置上面的属性，在 <code>AccessibilityService</code> 中我们就可以调用一个方法 <code>dispatchGesture(GestureDescription,GestureResultCallback,Handler)</code>，这个方法主要是根据屏幕的坐标点模拟手势操作，当然也包括点击。</p><p>所以，此时就得找到抖音视频页面喜欢按钮在屏幕上的坐标，由于不同手机坐标点肯定不一样，因此没办法是一个固定值，通过屏幕百分比的话，有一定的可行性，但不能保证百分百。因此想了另一个方案，通过悬浮窗手动定位到按钮位置。</p><p>最后，在处理一下细节，基本上就成型了。</p><p><img src="/2020/05/11/How-to-automatically-cancel-likes-on-Douyin-app/douyindislike_app.png" alt="douyindislike_app"></p><p>最后在手机上安装运行验证一下，1 千左右全部取消基本在 10 分钟以内完成，时间还行，不过为了写这个程序花了我周末一个白天😂。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近有想在抖音上发布视频，不想再注册个新号，但原来的账号之前在抖音上点赞了好多视频，个人主页中喜欢有将近 1 千个，不太喜欢，想当一个新号来使用的话，必须将这些喜欢取消掉。&lt;/p&gt;
+&lt;p&gt;手动取消的话，感觉特别麻烦，讨厌重复性的动作。网上搜了一圈，基本没找到自动取消的方案，实在是没撤了，作为一个开发者，最后只能自己动手丰衣足食了。&lt;/p&gt;
+&lt;p&gt;初步一想，有两种方案：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;找到抖音的请求接口，批量循环一遍。&lt;/li&gt;
+&lt;li&gt;在手机上模拟点击操作。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="http://wangpeiyuan.cn/categories/Android/"/>
+    
+    
+      <category term="APP" scheme="http://wangpeiyuan.cn/tags/APP/"/>
+    
+  </entry>
   
   <entry>
     <title>Jenkins 在 Windows 10 下编译 Android 项目报错：AAPT2 Dameon startup failed</title>
